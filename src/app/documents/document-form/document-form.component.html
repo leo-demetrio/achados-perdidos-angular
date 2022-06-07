@@ -1,1 +1,24 @@
-<p>document-form works!</p>
+
+<mat-card>
+    <mat-toolbar color="primary">Digite o documento</mat-toolbar>
+    <mat-card-content>
+        <form [formGroup]="form" class="min-width">
+            <mat-form-field class="full-width">
+                <input matInput formControlName="numberDocument" placeholder="Número">
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <mat-label>Situação</mat-label>
+                <mat-select formControlName="situation">
+                    <mat-option value="null"></mat-option>
+                    <mat-option value="lost">Perdido</mat-option>
+                    <mat-option value="found">Encontrado</mat-option>
+                  </mat-select>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button (click)="onSubmit()" mat-raised-button color="primary">Like</button>
+        <button (click)="onCancel()" mat-raised-button>Like</button>
+    </mat-card-actions>
+</mat-card>
