@@ -23,4 +23,11 @@ export class DocumentsService {
       // tap(documents => console.log(documents))
       )    
   }
+  save(record: Document){
+    return this.httpClient.post<Document>(this.Api, record)
+    .pipe(  
+      first(),   
+      tap(documents => console.log(documents))
+      )  
+  }
 }
